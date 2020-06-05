@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'form/HomeProCardRegisterForm.dart';
+import 'form/Test.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
           bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
         ),
       ),
-      home: HomeProCardRegisterForm(),
+//      home: FormTest(),
+    home: HomeProCardRegisterForm(),
     );
   }
 }

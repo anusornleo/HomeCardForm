@@ -11,30 +11,23 @@ class HomeProCardRegisterForm extends StatefulWidget {
 class _HomeProCardRegisterFormState extends State<HomeProCardRegisterForm> {
   final _formKey = GlobalKey<FormState>();
 
-  String _idTex;
-  String _email;
-  String _fname;
-  String _lname;
-  String _mobile;
-  String _otherContect;
+  final _idTax = TextEditingController();
+  final _email = TextEditingController();
+  final _fname = TextEditingController();
+  final _lname = TextEditingController();
+  final _mobile = TextEditingController();
+  final _otherContect = TextEditingController();
+  final _ext = TextEditingController();
+  final _houseNumber = TextEditingController();
+  final _roomNumber = TextEditingController();
+  final _floorNumber = TextEditingController();
+  final _village = TextEditingController();
+  final _mooNumber = TextEditingController();
+  final _soiNumber = TextEditingController();
+  final _street = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    final _idTax = TextEditingController();
-    final _email = TextEditingController();
-    final _fname = TextEditingController();
-    final _lname = TextEditingController();
-    final _mobile = TextEditingController();
-    final _otherContect = TextEditingController();
-    final _ext = TextEditingController();
-    final _houseNumber = TextEditingController();
-    final _roomNumber = TextEditingController();
-    final _floorNumber = TextEditingController();
-    final _village = TextEditingController();
-    final _mooNumber = TextEditingController();
-    final _soiNumber = TextEditingController();
-    final _street = TextEditingController();
-
     return Scaffold(
         appBar: AppBar(
           title: Text("Register"),
@@ -44,18 +37,6 @@ class _HomeProCardRegisterFormState extends State<HomeProCardRegisterForm> {
             onPressed: () {},
           ),
         ),
-//        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-//        floatingActionButton: Container(
-//          width: 200,
-//          height: 150,
-//          color: Colors.green,
-//          child: RaisedButton(
-//            color: Colors.blue,
-//            onPressed: () => {print(idTax.text)},
-//            child: Icon(Icons.add_a_photo),
-////            backgroundColor: Colors.blue,
-//          ),
-//        ),
         body: Form(
           key: _formKey,
           child: Column(
@@ -65,87 +46,107 @@ class _HomeProCardRegisterFormState extends State<HomeProCardRegisterForm> {
                 child: ListView(
                   children: <Widget>[
                     CustomInputTile(
-                        idTax: _idTax,
-                        title: "Tax Identification Number",
-                        hint: "Input Tax Number",
-                        require: true,
-                        typeInput: WhitelistingTextInputFormatter.digitsOnly),
+                      controller: _idTax,
+                      title: "Tax Identification Number",
+                      hint: "Input Tax Number",
+                      require: true,
+                      typeInput: [WhitelistingTextInputFormatter.digitsOnly],
+                      textInputType: TextInputType.number,
+                    ),
                     CustomInputTile(
-                        idTax: _email,
-                        title: "E-Mail",
-                        hint: "you@email.com",
-                        require: true,
-                        typeInput: WhitelistingTextInputFormatter.digitsOnly),
+                      controller: _email,
+                      title: "E-Mail",
+                      hint: "you@email.com",
+                      require: true,
+                      typeInput: [],
+                      textInputType: TextInputType.emailAddress,
+                    ),
                     CustomInputTile(
-                        idTax: _fname,
+                        controller: _fname,
                         title: "First Name",
                         hint: "First Name",
-                        require: true),
+                        require: true,
+                        typeInput: []),
                     CustomInputTile(
-                        idTax: _lname,
+                        controller: _lname,
                         title: "Last Name",
                         hint: "Last Name",
-                        require: true),
+                        require: true,
+                        typeInput: []),
                     // bank
                     Container(
                       child: SizedBox(height: 20),
                       color: Colors.grey[300],
                     ),
                     CustomInputTile(
-                        idTax: _mobile,
-                        title: "Mobile",
-                        hint: "e.g. 0819999999",
-                        require: true),
+                      controller: _mobile,
+                      title: "Mobile",
+                      hint: "e.g. 0819999999",
+                      require: true,
+                      typeInput: [WhitelistingTextInputFormatter.digitsOnly],
+                      textInputType: TextInputType.number,
+                    ),
                     CustomInputTile(
-                        idTax: _otherContect,
+                        controller: _otherContect,
                         title: "Other Contact Number",
                         hint: "e.g. 0819999999",
-                        require: false),
+                        require: false,
+                        typeInput: [WhitelistingTextInputFormatter.digitsOnly],
+                        textInputType: TextInputType.number),
                     CustomInputTile(
-                        idTax: _ext,
+                        controller: _ext,
                         title: "ext",
                         hint: "ext.",
-                        require: false),
+                        require: false,
+                        typeInput: [WhitelistingTextInputFormatter.digitsOnly],
+                        textInputType: TextInputType.number),
                     // bank
                     Container(
                       child: SizedBox(height: 20),
                       color: Colors.grey[300],
                     ),
                     CustomInputTile(
-                        idTax: _houseNumber,
+                        controller: _houseNumber,
                         title: "Home No.",
                         hint: "Home No.",
-                        require: true),
+                        require: true,
+                        typeInput: [WhitelistingTextInputFormatter.digitsOnly]),
                     CustomInputTile(
-                        idTax: _roomNumber,
+                        controller: _roomNumber,
                         title: "Room No.",
                         hint: "Room No.",
-                        require: false),
+                        require: false,
+                        typeInput: [WhitelistingTextInputFormatter.digitsOnly]),
                     CustomInputTile(
-                        idTax: _floorNumber,
+                        controller: _floorNumber,
                         title: "Floor",
                         hint: "Floor",
-                        require: false),
+                        require: false,
+                        typeInput: [WhitelistingTextInputFormatter.digitsOnly]),
                     CustomInputTile(
-                        idTax: _village,
+                        controller: _village,
                         title: "Village/Condo Name",
                         hint: "name",
-                        require: false),
+                        require: false,
+                        typeInput: [WhitelistingTextInputFormatter.digitsOnly]),
                     CustomInputTile(
-                        idTax: _mooNumber,
+                        controller: _mooNumber,
                         title: "Moo",
                         hint: "Moo",
-                        require: false),
+                        require: false,
+                        typeInput: [WhitelistingTextInputFormatter.digitsOnly]),
                     CustomInputTile(
-                        idTax: _soiNumber,
+                        controller: _soiNumber,
                         title: "Soi",
                         hint: "Soi",
-                        require: false),
+                        require: false,
+                        typeInput: [WhitelistingTextInputFormatter.digitsOnly]),
                     CustomInputTile(
-                        idTax: _street,
+                        controller: _street,
                         title: "Street",
                         hint: "Street",
-                        require: false),
+                        require: false,
+                        typeInput: [WhitelistingTextInputFormatter.digitsOnly]),
                   ],
                 ),
               ),
@@ -156,7 +157,14 @@ class _HomeProCardRegisterFormState extends State<HomeProCardRegisterForm> {
                 height: 70,
                 child: RaisedButton(
                   color: Colors.indigo,
-                  onPressed: () => {print(_idTax.text)},
+                  onPressed: () {
+                    print(_idTax.text);
+                    print(_email.text);
+                    _formKey.currentState.validate();
+//                    if (_formKey.currentState.validate()) {
+//
+//                    }
+                  },
                   child: Text(
                     "SAVE",
                     style: TextStyle(fontSize: 18, color: Colors.white),
@@ -170,26 +178,37 @@ class _HomeProCardRegisterFormState extends State<HomeProCardRegisterForm> {
   }
 }
 
-class CustomInputTile extends StatelessWidget {
-  const CustomInputTile({
-    Key key,
-    @required this.idTax,
-    @required this.title,
-    @required this.hint,
-    @required this.require,
-    this.typeInput,
-  }) : super(key: key);
+class CustomInputTile extends StatefulWidget {
+  CustomInputTile(
+      {Key key,
+      @required TextEditingController controller,
+      @required this.title,
+      @required this.hint,
+      @required this.require,
+      @required this.typeInput,
+      this.textInputType = TextInputType.text})
+      : _controller = controller,
+        super(key: key);
 
-  final TextEditingController idTax;
+  final TextEditingController _controller;
   final String title;
   final String hint;
   final bool require;
-  final WhitelistingTextInputFormatter typeInput;
+  List<TextInputFormatter> typeInput;
+  TextInputType textInputType;
+
+  @override
+  _CustomInputTileState createState() => _CustomInputTileState();
+}
+
+class _CustomInputTileState extends State<CustomInputTile> {
+  Color colorText = Colors.black;
 
   @override
   Widget build(BuildContext context) {
     String dok = '';
-    if (require == true) {
+
+    if (widget.require == true) {
       dok = "*";
     }
     return Container(
@@ -212,9 +231,11 @@ class CustomInputTile extends StatelessWidget {
               ),
               Container(
                 margin: EdgeInsets.only(top: 20, bottom: 20, left: 20),
-                child: Text(title,
-                    style:
-                        TextStyle(fontSize: 15, fontWeight: FontWeight.w600)),
+                child: Text(widget.title,
+                    style: TextStyle(
+                        color: colorText,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600)),
               ),
             ],
           ),
@@ -222,18 +243,19 @@ class CustomInputTile extends StatelessWidget {
             width: 180,
             padding: EdgeInsets.only(right: 10),
             child: TextFormField(
-              controller: idTax,
+              controller: widget._controller,
               textAlign: TextAlign.right,
               maxLength: 10,
               style: TextStyle(fontSize: 15),
-              keyboardType: TextInputType.number,
-              inputFormatters: [typeInput],
+              keyboardType: widget.textInputType,
+              inputFormatters: widget.typeInput,
               decoration: InputDecoration(
-                  hintText: hint, counterText: "", border: InputBorder.none),
+                  hintText: widget.hint,
+                  hintStyle: TextStyle(color: colorText),
+                  counterText: "",
+                  border: InputBorder.none),
               validator: (value) {
-                if (value.isEmpty) {
-                  return 'Please enter some text';
-                }
+                if (widget.require == true && value.isEmpty) changeStyle();
                 return null;
               },
             ),
@@ -241,5 +263,11 @@ class CustomInputTile extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  changeStyle() {
+    setState(() {
+      colorText = Colors.red;
+    });
   }
 }
